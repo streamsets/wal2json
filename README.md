@@ -54,7 +54,7 @@ Configuration
 postgresql.conf
 ---------------
 
-You need to set up the following parameters in postgresql.conf
+You need to set up the following parameters in postgresql.conf. wal_sender_timeout property is by default 60 seconds, Streamsets Datacollector will heartbeat every 30 seconds as keep alive starting SDC 3.21.0.
 
 ```
 wal_level = logical
@@ -64,7 +64,6 @@ wal_level = logical
 #
 max_replication_slots = 10
 max_wal_senders = 10
-wal_sender_timeout = 2000
 ```
 
 After changing these parameters, a restart is needed.
